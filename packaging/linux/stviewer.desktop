@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=stviewer
+GenericName=Safetensors Viewer
+Comment=View and edit .safetensors metadata
+Exec=stviewer %f
+Icon=stviewer
+Terminal=false
+Categories=Development;Utility;
+MimeType=application/x-safetensors;

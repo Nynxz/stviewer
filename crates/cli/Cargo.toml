@@ -1,0 +1,22 @@
+[package]
+name = "stv"
+description = "Inspect and edit safetensors metadata from the command line"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "stv"
+path = "src/main.rs"
+
+[dependencies]
+stv-core.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+clap = { version = "4.6.8", features = ["derive"] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[dev-dependencies]
+tempfile.workspace = true

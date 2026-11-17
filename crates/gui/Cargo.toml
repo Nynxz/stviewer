@@ -1,0 +1,25 @@
+[package]
+name = "stviewer"
+description = "Desktop viewer and metadata editor for .safetensors files"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+stv-core.workspace = true
+serde_json.workspace = true
+eframe = { version = "0.37.0", default-features = false, features = [
+    "clipboard",
+    "default_fonts",
+    "system_fonts", # fall back to installed fonts (CJK etc. in metadata)
+    "glow",
+    "wayland",
+    "x11",
+] }
+# Bundled monochrome emoji fonts: the UI's icons render identically everywhere.
+egui = { version = "0.37.0", features = ["monochrome_emoji_fonts"] }
+egui_extras = "0.37.0"
+rfd = "0.18.0"
+
+[dev-dependencies]
+tempfile.workspace = true
